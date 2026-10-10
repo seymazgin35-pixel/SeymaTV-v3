@@ -2,7 +2,7 @@
 import React, {useEffect, useRef, useState} from "react";
 import {io} from "socket.io-client";
 
-const SERVER = "http://localhost:3001";
+const SERVER = import.meta.env.VITE_SERVER_URL || "http://localhost:3001";
 const socket = io(SERVER, {autoConnect:true});
 
 function makeRoom(){ return Math.random().toString(36).slice(2,8).toUpperCase(); }
